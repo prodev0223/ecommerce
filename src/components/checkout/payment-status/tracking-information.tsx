@@ -10,6 +10,8 @@ import { Stack } from '@mui/material';
 import { StepIconProps } from '@mui/material/StepIcon';
 import { styled } from '@mui/material/styles';
 import Check from '@mui/icons-material/Check';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 
 const steps = [
@@ -61,6 +63,9 @@ const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
       color: '#784af4',
       zIndex: 1,
       fontSize: 18,
+      width: "16px",
+      height: "16px",
+   
     },
     '& .QontoStepIcon-circle': {
       width: 8,
@@ -77,7 +82,7 @@ function QontoStepIcon(props: StepIconProps) {
     return (
       <QontoStepIconRoot ownerState={{ active }} className={className}>
         {completed ? (
-          <Check className="QontoStepIcon-completedIcon" />
+          <CheckCircleIcon className="QontoStepIcon-completedIcon" />
         ) : (
           <div className="QontoStepIcon-circle" />
         )}

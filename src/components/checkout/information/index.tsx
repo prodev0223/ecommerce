@@ -10,7 +10,8 @@ export default function InformationMain() {
     <Box
       sx={{
         backgroundColor: "#449FDC",
-        minHeight: "100vh",
+        maxHeight: {md:"100vh"},
+        overflow:"hidden"
       }}
     >
       <CheckoutHeader />

@@ -40,7 +40,7 @@ export default function Payment() {
             boxShadow: "sm",
           }}
         >
-          <ListItem sx={{}}>
+          <ListItem>
             <FormControl
               sx={{ p: 2, flexDirection: "row", gap: 2, width: "100%" }}
             >

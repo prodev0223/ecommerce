@@ -13,23 +13,15 @@ import { StyledFlexContainerRowCentered } from "../../common/flex-container";
 import SelectBlock from "../../common/select-block";
 import CheckoutFooter from "../checkout-footer";
 import BreadcrumbBlock from "../../common/Breadcrumb-block";
+import ButtonBlock from "../../common/button-block";
+import { useNavigate } from "react-router-dom";
+import MainColumnWrapper from "../../common/main-column-wrapper";
 
 export default function MainColumn() {
+
+  const navigate = useNavigate()
   return (
-    <Paper
-      sx={{
-        bgcolor: "#fff",
-        width: {xs:"100%" , md:"808px"},
-        maxWidth: "808px",
-        minHeight: "100vh",
-        boxShadow: {xs:"none" , md:"-5px 0px 20px 0px #449FDCF2"},
-      }}
-    >
-      <Box
-        sx={{
-          margin:{xs:"17px 14px 0 14px" , md:"17px 66px 0 170px"}
-        }}
-      >
+    <MainColumnWrapper>
         <BreadcrumbBlock />
 
         <Box component="fieldset" sx={{ marginTop: "27px" }}>
@@ -337,10 +329,10 @@ export default function MainColumn() {
             Shipping Address
           </Typography>
           <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <InputBlock sx={{ width: "100%" }} label="First name" />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <InputBlock sx={{ width: "100%" }} label="Last name" />
             </Grid>
             <Grid item xs={12}>
@@ -355,22 +347,29 @@ export default function MainColumn() {
             <Grid item xs={12}>
               <InputBlock sx={{ width: "100%" }} label="City" />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} md={4}>
               <SelectBlock label="State/Province" />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} md={4}>
               <SelectBlock label="Country" />
             </Grid>
-            <Grid item xs={4}>
-              <InputBlock label="Zip/Postal code" />
+            <Grid item xs={12} md={4}>
+              <InputBlock sx={{ width: "100%" }} label="Zip/Postal code" />
             </Grid>
           </Grid>
         </Box>
 
+        <StyledFlexContainerRowCentered
+        sx={{ marginTop: "34px", marginBottom: "77px" , flexDirection:{xs:"column-reverse" , sm:"row"} }}
+      >
+        <ButtonBlock variant="text" title="Return to cart" onClick={() => navigate("/cart")} sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
+        <ButtonBlock title="Continue shopping" onClick={() => navigate("/checkout/shipping")} sx={{width:{xs:"100%" , sm:"fit-content"}}} />
+      </StyledFlexContainerRowCentered>
+
+
         <Divider variant="fullWidth" />
 
         <CheckoutFooter />
-      </Box>
-    </Paper>
+    </MainColumnWrapper>
   );
 }

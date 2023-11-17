@@ -6,6 +6,7 @@ interface ButtonBlockProps {
   title?: string;
   disabled?: boolean;
   onClick?: () => any;
+  sx?: any
 }
 
 const ButtonBlock: React.FC<ButtonBlockProps> = ({
@@ -13,6 +14,7 @@ const ButtonBlock: React.FC<ButtonBlockProps> = ({
   title,
   disabled,
   onClick,
+  sx
 }) => {
   return (
     <Button
@@ -21,6 +23,9 @@ const ButtonBlock: React.FC<ButtonBlockProps> = ({
         textTransform: "capitalize",
         width: "fit-content",
         borderRadius: "10px",
+        paddingY:"21px",
+        fontSize:"14px",
+        ...sx
       }}
       disabled={disabled || false}
       onClick={onClick}

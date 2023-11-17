@@ -44,7 +44,7 @@ export default function MainColumn() {
           <StyledFlexContainerRowCentered>
             <Typography sx={{width:"70px"}}>Contact</Typography>
             <Typography sx={{flex:"1"}}>name@email.com</Typography>
-            <ButtonBlock variant="text" title="Change" />
+            <ButtonBlock variant="text" title="Change" sx={{padding: 0}}/>
           </StyledFlexContainerRowCentered>
           <Divider variant="fullWidth" />
           <StyledFlexContainerRowCentered>
@@ -57,7 +57,7 @@ export default function MainColumn() {
               flex:"1"
               
             }}>151 O’Connor St Ground floor, Ottawa ON K2P 2L8, Canada</Typography>
-            <ButtonBlock variant="text" title="Change" />
+            <ButtonBlock variant="text" title="Change" sx={{padding: 0}} />
           </StyledFlexContainerRowCentered>
         </Stack>
 
@@ -75,9 +75,9 @@ export default function MainColumn() {
         </Stack>
 
 
-        <StyledFlexContainerRowCentered sx={{marginTop:"34px" , marginBottom:"77px"}}>
-            <ButtonBlock variant="text" title="Return to information" onClick={() => navigate("/checkout/information")}/>
-            <ButtonBlock title="Continue shopping" onClick={() => navigate("/checkout/payment")}/>
+        <StyledFlexContainerRowCentered sx={{marginTop:"34px" , marginBottom:"77px" , flexDirection:{xs:"column-reverse" , sm:"row"} }}>
+            <ButtonBlock variant="text" title="Return to information" onClick={() => navigate("/checkout/information")} sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
+            <ButtonBlock title="Continue shopping" onClick={() => navigate("/checkout/payment")} sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
         </StyledFlexContainerRowCentered>
 
 

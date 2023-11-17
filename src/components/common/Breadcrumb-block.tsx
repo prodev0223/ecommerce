@@ -25,7 +25,7 @@ export default function BreadcrumbBlock() {
       underline="hover"
       key="2"
       color="inherit"
-      onClick={(e) => handleClick(e , "/information")}
+      onClick={(e) => handleClick(e , "/checkout/information")}
     >
       Information
     </Link>,
@@ -33,7 +33,7 @@ export default function BreadcrumbBlock() {
     underline="hover"
     key="2"
     color="inherit"
-    onClick={(e) => handleClick(e , "/shipping")}
+    onClick={(e) => handleClick(e , "/checkout/shipping")}
   >
     Shipping
   </Link>,
@@ -41,7 +41,7 @@ export default function BreadcrumbBlock() {
    underline="hover"
    key="2"
    color="inherit"
-   onClick={(e) => handleClick(e , "/payment")}
+   onClick={(e) => handleClick(e , "/checkout/payment")}
  >
    Payment
  </Link>,

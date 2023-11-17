@@ -10,7 +10,7 @@ export default function AddTipRadio() {
   const tipItem = (percentage:string , price:string) => {
     return (
       <Stack sx={{ alignItems: "center", justifyContent: "center" }}>
-        <Typography sx={{ fontSize: "14px", color: "#545454" }}>{percentage}</Typography>
+        <Typography sx={{ fontSize: "14px", color:"#545454" }}>{percentage}</Typography>
         <Typography variant="body2" sx={{ color: "#737373", fontSize: "12px" }}>
           {price}
         </Typography>
@@ -60,10 +60,10 @@ export default function AddTipRadio() {
             label={
               {
                 left: tipItem("15%" , "$14.70"),
-                right: tipItem("15%" , "$14.70")
+                right: tipItem("18%" , "$17.64")
                 ,
-                center: tipItem("15%" , "$14.70"),
-                justify: tipItem("15%" , "$14.70"),
+                center: tipItem("20%" , "$19.60"),
+                justify: tipItem("None" , ""),
               }[item]
             }
             variant={alignment === item ? "outlined" : "plain"}
@@ -74,6 +74,7 @@ export default function AddTipRadio() {
               },
               label: { sx: { lineHeight: 0 } },
             }}
+
           />
         </Box>
       ))}

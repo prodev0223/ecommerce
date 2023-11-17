@@ -61,7 +61,7 @@ export default function MainColumn({status , mapCardData}:{status:string , mapCa
           alignItems: "center",
           gap: "15px",
           position: "relative",
-          left: "-79px",
+          left: {xs:"0",md:"-79px"},
         }}
       >
         <Box sx={{ width: "64px", height: "64px" , display:"flex" , alignItems:"center" , justifyContent:"flex-end" }}>
@@ -91,7 +91,7 @@ export default function MainColumn({status , mapCardData}:{status:string , mapCa
         </Box>
       </Stack>
 
-      <MapCard title={mapCardData[status].title} description= {mapCardData[status].description} />
+      <MapCard title={mapCardData[status].title} description= {mapCardData[status].description} status={status} />
 
       <Paper variant="outlined" sx={{ padding: "14px" }}>
         <Text18 sx={{ marginBottom: "14px" }}>Customer information</Text18>
@@ -141,10 +141,10 @@ export default function MainColumn({status , mapCardData}:{status:string , mapCa
       </Paper>
 
       <StyledFlexContainerRowCentered
-        sx={{ marginTop: "34px", marginBottom: "77px" }}
+        sx={{ marginTop: "34px", marginBottom: "77px" , flexDirection:{xs:"column-reverse" , sm:"row"}  }}
       >
-        <ButtonBlock variant="text" title="Need help?" />
-        <ButtonBlock title="Continue shopping" />
+        <ButtonBlock variant="text" title="Need help?" sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
+        <ButtonBlock title="Continue shopping" sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
       </StyledFlexContainerRowCentered>
 
       <Divider variant="fullWidth" />

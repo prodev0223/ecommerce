@@ -10,6 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 interface ButtonBlockProps {
+  sx?: any;
   variant?: "contained" | "outlined" | "text"
   label?: string
 }

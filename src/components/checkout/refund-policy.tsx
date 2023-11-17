@@ -8,6 +8,8 @@ import { Divider, IconButton, Stack } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ButtonBlock from "../common/button-block";
 import { Text18 } from "../common/text-block";
+import { IActiveModal } from "./checkout-footer";
+import { IModalProps } from "../../types";
 
 const style = {
   position: "absolute" as "absolute",
@@ -22,16 +24,14 @@ const style = {
   borderRadius: "12px",
 };
 
-export default function RefundPolicyModal({}) {
-  const [open, setOpen] = React.useState(true);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+export default function RefundPolicyModal({activeModal , handleCloseModal}:IModalProps) {
 
   return (
     <div>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={activeModal.open && activeModal.type == "refund-policy"}
+        onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -40,7 +40,7 @@ export default function RefundPolicyModal({}) {
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Refund/Return policy
             </Typography>
-            <IconButton>
+            <IconButton onClick={handleCloseModal}>
               <CloseIcon />
             </IconButton>
           </StyledFlexContainerRowCentered>

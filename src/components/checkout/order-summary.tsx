@@ -24,14 +24,19 @@ export default function OrderSummary({ target }: { target?: string }) {
   console.log("target", target, target !== "status");
   return (
     <Paper
+      variant="outlined"
       sx={{
         bgcolor: "#fff",
-        maxWidth: "448px",
+        maxWidth: {xs:"100%",md:"448px"},
         width: { xs: "100%", md: "448px" },
         height: "fit-content",
         borderRadius: { xs: "0px", md: "10px" },
         padding: "15px",
         boxSizing: "border-box",
+        boxShadow:"none",
+        border:{xs:"0 0 2px solid #449FDC 0" , md:"initial"},
+        borderBottom: '2px solid #449FDC',
+        marginTop:{xs:"0" , md:"30px"}
       }}
     >
       <Stack
@@ -75,7 +80,7 @@ export default function OrderSummary({ target }: { target?: string }) {
         <>
           <Stack sx={{ flexDirection: "row", gap: "14px", marginTop: "21px" }}>
             <InputBlock sx={{ flex: "1" }} label="Discount code" />
-            <ButtonBlock title="Apply" disabled={true} />
+            <ButtonBlock title="Apply" disabled={true} sx={{padding:"16px 17px"}}/>
           </Stack>
           <Chip
             color="primary"

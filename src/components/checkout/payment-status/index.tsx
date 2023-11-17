@@ -44,13 +44,18 @@ export default function PaymentStatusMain() {
     return (
         <Box sx={{
             backgroundColor: '#449FDC',
-            minHeight: "100vh",
+            maxHeight: {md:"100vh"},
+            overflow:"hidden"
           }}>
     
             <CheckoutHeader />
 
 
-            <Stack sx={{ flexDirection: "row", gap: "25px" }}>
+            <Stack  sx={{
+          flexDirection: { xs: "column-reverse", md: "row" },
+          gap: { xs: "0", md: "25px" },
+          bgcolor: { xs: "#fff", md: "transparent" }, 
+        }}>
                 <MainColumn status={status} mapCardData={mapCardData} />
                 <OrderSummary target="status" />
 

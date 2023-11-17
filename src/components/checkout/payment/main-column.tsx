@@ -1,8 +1,4 @@
-import {
-  Divider,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import ButtonBlock from "../../common/button-block";
 import Payment from "./payment";
 import BillingAddress from "./billing-address";
@@ -15,7 +11,7 @@ import { StyledFlexContainerRowCentered } from "../../common/flex-container";
 import { useNavigate } from "react-router-dom";
 
 export default function MainColumn() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <MainColumnWrapper>
@@ -32,7 +28,7 @@ export default function MainColumn() {
         <StyledFlexContainerRowCentered>
           <Typography sx={{ width: "70px" }}>Contact</Typography>
           <Typography sx={{ flex: "1" }}>name@email.com</Typography>
-          <ButtonBlock variant="text" title="Change" />
+          <ButtonBlock variant="text" title="Change" sx={{padding:"0"}} />
         </StyledFlexContainerRowCentered>
         <Divider variant="fullWidth" />
         <StyledFlexContainerRowCentered>
@@ -48,10 +44,9 @@ export default function MainColumn() {
           >
             151 O’Connor St Ground floor, Ottawa ON K2P 2L8, Canada
           </Typography>
-          <ButtonBlock variant="text" title="Change" />
+          <ButtonBlock variant="text" title="Change" sx={{padding:"0"}}/>
         </StyledFlexContainerRowCentered>
       </Stack>
-
 
       <Stack sx={{ marginTop: "34px" }}>
         <Typography
@@ -102,10 +97,23 @@ export default function MainColumn() {
       </Stack>
 
       <StyledFlexContainerRowCentered
-        sx={{ marginTop: "34px", marginBottom: "77px" }}
+        sx={{
+          marginTop: "34px",
+          marginBottom: "77px",
+          flexDirection: { xs: "column-reverse", sm: "row" },
+        }}
       >
-        <ButtonBlock variant="text" title="Return to shipping" onClick={() => navigate("/checkout/shipping")} />
-        <ButtonBlock title="Continue shopping" onClick={() => navigate("/checkout/order/status/pending")} />
+        <ButtonBlock
+          variant="text"
+          title="Return to shipping"
+          onClick={() => navigate("/checkout/shipping")}
+          sx={{ width: { xs: "100%", sm: "fit-content" } }}
+        />
+        <ButtonBlock
+          title="Continue shopping"
+          onClick={() => navigate("/checkout/order/status/pending")}
+          sx={{ width: { xs: "100%", sm: "fit-content" } }}
+        />
       </StyledFlexContainerRowCentered>
 
       <Divider variant="fullWidth" />
