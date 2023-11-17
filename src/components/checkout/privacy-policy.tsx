@@ -19,12 +19,16 @@ const style = {
   border: "none",
   boxShadow: "none",
   p: "16px",
-  width: { md: "1110px" },
+  width: { xs: "375px", md: "1110px" },
   borderRadius: "12px",
+  maxHeight: "80vh",
+  overflow: "auto",
 };
 
-export default function PrivacyPolicyModal({activeModal , handleCloseModal}:IModalProps) {
-
+export default function PrivacyPolicyModal({
+  activeModal,
+  handleCloseModal,
+}: IModalProps) {
   return (
     <div>
       <Modal
@@ -36,71 +40,131 @@ export default function PrivacyPolicyModal({activeModal , handleCloseModal}:IMod
         <Box sx={style}>
           <StyledFlexContainerRowCentered sx={{ paddingBottom: "16px" }}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Refund/Return policy
+              Privacy policy
             </Typography>
             <IconButton onClick={handleCloseModal}>
               <CloseIcon />
             </IconButton>
           </StyledFlexContainerRowCentered>
           <Divider variant="fullWidth" />
-          <Stack sx={{ gap: "14px" }}>
-            <Text18
-              sx={{ fontWeight: "600", color: "#000", marginTop: "16px" }}
-            >
-              ALL SALES ARE FINAL. NO RETURNS OR EXCHANGES.
+          <Stack sx={{ gap: "14px", marginTop: "16px" }}>
+            <Text18>
+              <strong>1. Information We Collect:</strong>
+            </Text18>
+            <Text18>
+              We may collect the following types of personal information from
+              you:
+              <br />
+              Contact Information: Name, email address, phone number, and
+              mailing address.
+              <br />
+              Payment Information: Credit card details, billing address, and
+              other payment-related information.
+              <br />
+              Order Details: Information related to your orders, including
+              products purchased and transaction history.
+              <br />
+              User Account Information: Username, password, and other
+              account-related details.
             </Text18>
 
             <Text18>
-              <strong>
-                If a product you've purchased becomes unavailable or is sold
-                out,
-              </strong>
-              we'll refund the value to your store credit or balance. Should you
-              prefer a refund to your original payment method in this situation,
-              our customer support team will be happy to assist you. Please
-              don't hesitate to get in touch with us if you have any questions
-              or requests.
+              <strong>2. How We Use Your Information:</strong>
+            </Text18>
+            <Text18>
+              We use the collected information for the following purposes:
+              <br />
+              To process and fulfill your orders.
+              <br />
+              To communicate with you about your orders, account, and
+              promotions.
+              <br />
+              To provide customer support and address your inquiries.
+              <br />
+              To improve and customize our services, website, and user
+              experience.
+              <br />
+              To analyze and understand user preferences and trends.
+              <br />
+              To prevent fraudulent activities and enhance security.
+              <br />
+              To comply with legal obligations.
             </Text18>
 
             <Text18>
-              <strong>
-                If your order has been accurately fulfilled by us,
-              </strong>
-              but you discover that you've chosen the wrong size or made an
-              error on your part, please note that we are unable to provide
-              refunds or accept returns in such cases. We kindly request your
-              understanding and attention to detail when placing your order.
+              <strong>3. Disclosure of Your Information:</strong>
+            </Text18>
+            <Text18>
+              We may share your personal information with third parties in the
+              following circumstances:
+              <br />
+              Service Providers: We may share your information with trusted
+              third-party service providers who assist us in operating our
+              business and delivering services to you.
+              <br />
+              Legal Compliance: We may disclose your information when required
+              by law, regulation, legal process, or governmental request.
+              <br />
+              Business Transfers: In the event of a merger, acquisition, or sale
+              of assets, your information may be transferred to the acquiring
+              company.
+              <br />
+              Consent: We may share your information with third parties when you
+              provide us with explicit consent.
+            </Text18>
+            <Text18>
+              <strong>4. Data Security:</strong>
+            </Text18>
+            <Text18>
+              We take reasonable measures to protect your personal information
+              from unauthorized access, alteration, disclosure, or destruction.
+              However, no method of data transmission over the internet or
+              electronic storage is completely secure. We cannot guarantee the
+              absolute security of your information.
+            </Text18>
+            <Text18>
+              <strong>5. Your Choices:</strong>
             </Text18>
 
             <Text18>
-              <strong>
-                QUALITY <span style={{ color: "#449FDC" }}>GUARANTEE</span>:
-              </strong>
+              You can update your account information by logging into your
+              account on our website.
+              <br />
+              You can opt-out of receiving promotional communications from us by
+              following the unsubscribe instructions provided in the
+              communication.
+              <br />
+              You can manage cookies and other tracking technologies through
+              your browser settings.
             </Text18>
             <Text18>
-              <strong>
-                If you receive a a product with visible imperfections or
-                defects, damaged, or it falls short of its description
-              </strong>
-              you should submit evidence to our customer support team or your
-              sales associate. Your claim and supporting evidence will then be
-              carefully reviewed by our third-party Quality Control (QC) team.
+              <strong>6. Children's Privacy:</strong>
             </Text18>
             <Text18>
-              <strong>If our QC team finds in your favor</strong> we will send
-              you a <strong>replacement</strong> a no extra cost to you. In the
-              rare event that the replacement also exhibits a significant
-              shortcoming, and the evidence you provide aligns with the findings
-              of our third-party QC team, you'll have the option to select
-              either another replacement or a <strong>full refund,</strong>
-              based on your preference.
+              Our services are not intended for individuals under the age of 18.
+              We do not knowingly collect personal information from children. If
+              you are a parent or guardian and believe your child has provided
+              us with personal information, please contact us to have the
+              information removed.
+            </Text18>
+            <Text18>
+              <strong>7. Changes to this Privacy Policy:</strong>
+            </Text18>
+            <Text18>
+              We may update this Privacy Policy from time to time. Any changes
+              will be posted on our website with a revised effective date. We
+              encourage you to review the policy periodically.
             </Text18>
           </Stack>
 
           <Stack
-            sx={{ width: "100%", alignItems: "flex-end", marginTop: "16px" }}
+            sx={{
+              width: "100%",
+              alignItems: { xs: "center", md: "flex-end" },
+              marginTop: "16px",
+            }}
           >
-            <ButtonBlock title="I have read and agreed to the refund policy" />
+            <ButtonBlock title="I have read and agreed to the privacy policy" />
           </Stack>
         </Box>
       </Modal>

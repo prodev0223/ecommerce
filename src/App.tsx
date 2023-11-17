@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import PaymentStatusMain from './components/checkout/payment-status';
+import PaymentStatusMain from './components/checkout/status';
 import InformationMain from './components/checkout/information';
 import ShippingMain from './components/checkout/shipping';
 import PaymentMain from './components/checkout/payment';

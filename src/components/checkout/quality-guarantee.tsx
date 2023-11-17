@@ -1,10 +1,10 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import { styled } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { StyledFlexContainerRowCentered } from "../common/flex-container";
-import { Divider, IconButton, Stack } from "@mui/material";
+import { Divider, IconButton, Stack, Link } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ButtonBlock from "../common/button-block";
 import { Text18 } from "../common/text-block";
@@ -21,10 +21,20 @@ const style = {
   p: "16px",
   width: { md: "1110px" },
   borderRadius: "12px",
+  maxHeight: "80vh",
+  overflow: "auto",
 };
 
-export default function QualityGuaranteeModal({activeModal , handleCloseModal}:IModalProps) {
+const Text16 = styled(Typography)({
+  fontSize: "16px",
+  fontWeight: "600",
+  lineHeight: "19px",
+});
 
+export default function QualityGuaranteeModal({
+  activeModal,
+  handleCloseModal,
+}: IModalProps) {
   return (
     <div>
       <Modal
@@ -35,72 +45,123 @@ export default function QualityGuaranteeModal({activeModal , handleCloseModal}:I
       >
         <Box sx={style}>
           <StyledFlexContainerRowCentered sx={{ paddingBottom: "16px" }}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Refund/Return policy
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              fontWeight={700}
+            >
+              QUALITY <span style={{ color: "#449FDC" }}>GUARANTEE</span>
             </Typography>
             <IconButton onClick={handleCloseModal}>
               <CloseIcon />
             </IconButton>
           </StyledFlexContainerRowCentered>
           <Divider variant="fullWidth" />
-          <Stack sx={{ gap: "14px" }}>
-            <Text18
-              sx={{ fontWeight: "600", color: "#000", marginTop: "16px" }}
+          <Stack sx={{ gap: "14px", marginTop: "16px", textAlign: "center" }}>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "10px",
+                fontWeight: "400",
+                lineHeight: "15px",
+                color: "#4E4E4E",
+              }}
             >
-              ALL SALES ARE FINAL. NO RETURNS OR EXCHANGES.
-            </Text18>
+              Find details in the{" "}
+              <Link sx={{ color: "#000AFF", cursor: "pointer" }}>
+                Refund/Return policy
+              </Link>
+              . To claim quality guarantee,{" "}
+              <span style={{ fontWeight: "700" }}>
+                report within 24 hours of delivery
+              </span>
+            </Typography>
 
-            <Text18>
-              <strong>
-                If a product you've purchased becomes unavailable or is sold
-                out,
-              </strong>
-              we'll refund the value to your store credit or balance. Should you
-              prefer a refund to your original payment method in this situation,
-              our customer support team will be happy to assist you. Please
-              don't hesitate to get in touch with us if you have any questions
-              or requests.
-            </Text18>
+            <Text16>
+              We have complete confidence in the quality of our products and
+              firmly believe that you will be more than delighted with your
+              purchase.
+            </Text16>
 
-            <Text18>
-              <strong>
-                If your order has been accurately fulfilled by us,
-              </strong>
-              but you discover that you've chosen the wrong size or made an
-              error on your part, please note that we are unable to provide
-              refunds or accept returns in such cases. We kindly request your
-              understanding and attention to detail when placing your order.
-            </Text18>
+            <Text16>
+              However, we understand that sometimes things may not go as
+              planned.
+            </Text16>
 
-            <Text18>
-              <strong>
-                QUALITY <span style={{ color: "#449FDC" }}>GUARANTEE</span>:
-              </strong>
-            </Text18>
-            <Text18>
-              <strong>
-                If you receive a a product with visible imperfections or
-                defects, damaged, or it falls short of its description
-              </strong>
-              you should submit evidence to our customer support team or your
-              sales associate. Your claim and supporting evidence will then be
-              carefully reviewed by our third-party Quality Control (QC) team.
-            </Text18>
-            <Text18>
-              <strong>If our QC team finds in your favor</strong> we will send
-              you a <strong>replacement</strong> a no extra cost to you. In the
-              rare event that the replacement also exhibits a significant
-              shortcoming, and the evidence you provide aligns with the findings
-              of our third-party QC team, you'll have the option to select
-              either another replacement or a <strong>full refund,</strong>
-              based on your preference.
-            </Text18>
+            <Text16>
+              That's why we offer our amazing{" "}
+              <span style={{ color: "#449FDC" }}>
+                “We messed up? Get blessed up” guarantee
+              </span>
+              .
+            </Text16>
+
+            <Text16>
+              So, no need to worry, simply contact support and provide pictures
+              of our short comings.
+            </Text16>
+
+            <Text16>
+              After our QC team reviews your claim, we’ll send a free
+              replacement(and might even give you some store credit for your
+              troubles).
+            </Text16>
+
+            <Text16>
+              In the rare event that the replacement also exhibits a
+              shortcoming, and the QC team agrees, we will give you the choice
+              of giving us another chance or requesting a full refund.
+            </Text16>
+
+            <Text16>
+              If you choose the refund, we'll promptly process a refund for the
+              full purchase price, which will be promptly credited back to your
+              original payment method. Your satisfaction is our utmost priority,
+              and we'll ensure that you're a happy customer!We have complete
+              confidence in the quality of our products and firmly believe that
+              you will be more than delighted with your purchase.
+            </Text16>
+
+            <Text16>
+              However, we understand that sometimes things may not go as
+              planned.
+            </Text16>
+
+            <Text16>
+              That's why we offer our amazing “We messed up? Get blessed up”
+              guarantee.
+            </Text16>
+
+            <Text16>
+              So, no need to worry, simply contact support and provide pictures
+              of our short comings.
+            </Text16>
+
+            <Text16>
+              After our QC team reviews your claim, we’ll send a free
+              replacement(and might even give you some store credit for your
+              troubles).
+            </Text16>
+
+            <Text16>
+              In the rare event that the replacement also exhibits a
+              shortcoming, and the QC team agrees, we will give you the choice
+              of giving us another chance or requesting a full refund.
+            </Text16>
+
+            <Text16>
+              If you choose the refund, we'll promptly process a refund for the
+              full purchase price, which will be promptly credited back to your
+              original payment method. Your satisfaction is our utmost priority,
+              and we'll ensure that you're a happy customer!
+            </Text16>
           </Stack>
 
           <Stack
             sx={{ width: "100%", alignItems: "flex-end", marginTop: "16px" }}
           >
-            <ButtonBlock title="I have read and agreed to the refund policy" />
+            <ButtonBlock title="Show me the full Refund/Return Policy" />
           </Stack>
         </Box>
       </Modal>
