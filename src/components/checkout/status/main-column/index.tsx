@@ -89,7 +89,7 @@ export default function MainColumn({status , mapCardData}:{status:string , mapCa
 
       <MapCard title={mapCardData[status].title} description= {mapCardData[status].description} status={status} />
 
-      <Paper variant="outlined" sx={{ padding: "14px" }}>
+      <Paper variant="outlined" sx={{ padding: "14px" , marginBottom: "228px"}}>
         <Text18 sx={{ marginBottom: "14px" }}>Customer information</Text18>
 
         <Grid container spacing={"14px"}>
