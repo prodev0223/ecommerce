@@ -1,23 +1,9 @@
 import {
   Divider,
-  FormControlLabel,
-  FormLabel,
-  Grid,
-  IconButton,
-  Input,
-  List,
-  ListItem,
-  Paper,
-  Radio,
-  RadioGroup,
   Stack,
   Typography,
-  styled,
 } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ButtonBlock from "../../common/button-block";
-import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
-import InputBlock from "../../common/input-block";
 import Payment from "./payment";
 import BillingAddress from "./billing-address";
 import CheckoutFooter from "../checkout-footer";
@@ -25,14 +11,12 @@ import { Text14 } from "../../common/text-block";
 import MainColumnWrapper from "../../common/main-column-wrapper";
 import AddTip from "./add-tip";
 import BreadcrumbBlock from "../../common/Breadcrumb-block";
-
-const StyledFlexContainerRowCentered = styled(Stack)({
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-});
+import { StyledFlexContainerRowCentered } from "../../common/flex-container";
+import { useNavigate } from "react-router-dom";
 
 export default function MainColumn() {
+  const navigate = useNavigate()
+
   return (
     <MainColumnWrapper>
       <BreadcrumbBlock />
@@ -120,8 +104,8 @@ export default function MainColumn() {
       <StyledFlexContainerRowCentered
         sx={{ marginTop: "34px", marginBottom: "77px" }}
       >
-        <ButtonBlock variant="text" title="Return to shipping" />
-        <ButtonBlock title="Continue shopping" />
+        <ButtonBlock variant="text" title="Return to shipping" onClick={() => navigate("/checkout/shipping")} />
+        <ButtonBlock title="Continue shopping" onClick={() => navigate("/checkout/order/status/pending")} />
       </StyledFlexContainerRowCentered>
 
       <Divider variant="fullWidth" />

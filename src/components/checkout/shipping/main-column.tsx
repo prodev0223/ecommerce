@@ -24,6 +24,7 @@ import ButtonBlock from "../../common/button-block";
 import CustomSeparator from "../../common/Breadcrumb-block";
 import { Text18 } from "../../common/text-block";
 import MainColumnWrapper from "../../common/main-column-wrapper";
+import { useNavigate } from "react-router-dom";
 
 const StyledFlexContainerRowCentered = styled(Stack)({
     flexDirection: "row",
@@ -34,6 +35,8 @@ const StyledFlexContainerRowCentered = styled(Stack)({
 
 
 export default function MainColumn() {
+  const navigate = useNavigate()
+
   return (
     <MainColumnWrapper>
         <CustomSeparator />
@@ -73,8 +76,8 @@ export default function MainColumn() {
 
 
         <StyledFlexContainerRowCentered sx={{marginTop:"34px" , marginBottom:"77px"}}>
-            <ButtonBlock variant="text" title="Return to information"/>
-            <ButtonBlock title="Continue shopping" />
+            <ButtonBlock variant="text" title="Return to information" onClick={() => navigate("/checkout/information")}/>
+            <ButtonBlock title="Continue shopping" onClick={() => navigate("/checkout/payment")}/>
         </StyledFlexContainerRowCentered>
 
 

@@ -143,7 +143,7 @@ export default function MainColumn({status , mapCardData}:{status:string , mapCa
       <StyledFlexContainerRowCentered
         sx={{ marginTop: "34px", marginBottom: "77px" }}
       >
-        <ButtonBlock variant="text" title="Return to information" />
+        <ButtonBlock variant="text" title="Need help?" />
         <ButtonBlock title="Continue shopping" />
       </StyledFlexContainerRowCentered>
 
