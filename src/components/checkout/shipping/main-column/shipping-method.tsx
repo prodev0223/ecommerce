@@ -7,7 +7,6 @@ import Sheet from '@mui/joy/Sheet';
 import Divider from '@mui/joy/Divider';
 import FormLabel from '@mui/joy/FormLabel';
 import { StyledFlexContainerRowCentered } from '../../../common/flex-container';
-import Typography from "@mui/material/Typography";
 import { FormHelperTextSX, Text14 } from '../../../common/text-block';
 
 export default function ShippingMethod() {

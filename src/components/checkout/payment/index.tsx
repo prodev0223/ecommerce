@@ -1,11 +1,6 @@
 import {
   Box,
   Stack,
-  Sheet,
-  Badge,
-  Avatar,
-  Typography,
-  Divider,
 } from "@mui/joy";
 import CheckoutHeader from "../checkout-header";
 import OrderSummary from "../order-summary";

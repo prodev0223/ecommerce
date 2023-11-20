@@ -1,23 +1,19 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import InputBlock from "../../../common/input-block";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
+import { Text18 } from "../../../common/text-block";
 
 
 export default function ContactInformation() {
     return(
         <Box>
-        <Typography
+        <Text18
           variant="h2"
-          sx={{
-            fontSize: "18px",
-            fontWeight: "400",
-            lineHeight: "27px",
-            marginBottom: "14px",
-          }}
+          mb="14px"
         >
           Contact Information
-        </Typography>
-        <Stack sx={{ gap: "14px" }}>
+        </Text18>
+        <Stack gap="14px">
           <InputBlock icon={<PhoneOutlinedIcon />} label="Phone number" />
           <InputBlock label="Email" />
         </Stack>

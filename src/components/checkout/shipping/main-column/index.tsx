@@ -1,19 +1,5 @@
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import {
-  Avatar,
-  Badge,
-  Box,
-  Button,
-  Chip,
   Divider,
-  Grid,
-  Paper,
-  Radio,
-  RadioGroup,
   Stack,
   Typography,
   styled,
@@ -25,13 +11,7 @@ import CustomSeparator from "../../../common/Breadcrumb-block";
 import { Text18 } from "../../../common/text-block";
 import MainColumnWrapper from "../../../common/main-column-wrapper";
 import { useNavigate } from "react-router-dom";
-
-const StyledFlexContainerRowCentered = styled(Stack)({
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  });
-  
+import { StyledFlexContainerRowCentered } from "../../../common/flex-container";
 
 
 export default function MainColumn() {

@@ -1,8 +1,4 @@
-import {
-  Box,
-  Typography,
-  Divider,
-} from "@mui/material";
+import { Box, Typography, Divider, styled } from "@mui/material";
 import { StyledFlexContainerRowCentered } from "../../../common/flex-container";
 import CheckoutFooter from "../../checkout-footer";
 import BreadcrumbBlock from "../../../common/Breadcrumb-block";
@@ -13,43 +9,34 @@ import ExpressCheckout from "./express-checkout";
 import ContactInformation from "./contact-information";
 import ShippingAddress from "./shipping-address";
 
+const HorizontalLine = styled(Box)({
+  height: "1px",
+  width: "100%",
+  flex: "1",
+  background: "#D9D9D9",
+});
+
 export default function MainColumn() {
   const navigate = useNavigate();
   return (
     <MainColumnWrapper>
       <BreadcrumbBlock />
       <ExpressCheckout />
-
-      <StyledFlexContainerRowCentered sx={{ margin: "14px 0" }}>
-        <Box
-          sx={{
-            height: "1px",
-            width: "100%",
-            flex: "1",
-            background: "#D9D9D9",
-          }}
-        />
-        <Typography sx={{ padding: "0 14px" }}>Or</Typography>
-        <Box
-          sx={{
-            height: "1px",
-            width: "100%",
-            flex: "1",
-            background: "#D9D9D9",
-          }}
-        />
+      
+      <StyledFlexContainerRowCentered m="14px 0">
+        <HorizontalLine />
+        <Typography p="0 14px">Or</Typography>
+        <HorizontalLine />
       </StyledFlexContainerRowCentered>
 
       <ContactInformation />
-
       <ShippingAddress />
 
       <StyledFlexContainerRowCentered
-        sx={{
-          marginTop: "34px",
-          marginBottom: "77px",
-          flexDirection: { xs: "column-reverse", sm: "row" },
-        }}
+        flexDirection={{ xs: "column-reverse", sm: "row" }}
+        mt="34px"
+        mb={{ xs: "17px", md: "77px" }}
+        gap={{ xs: "5px", md: "0" }}
       >
         <ButtonBlock
           variant="text"

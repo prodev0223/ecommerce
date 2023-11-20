@@ -2,26 +2,22 @@
 import {
     Box,
     Grid,
-    Typography,
   } from "@mui/material";
 import InputBlock from "../../../common/input-block";
 import SelectBlock from "../../../common/select-block";
+import { Text18 } from "../../../common/text-block";
+import CheckboxBlock from "../../../common/checkbox-block";
 
 export default function ShippingAddress() {
     return(
-        <Box sx={{ marginBottom: "228px", marginTop: "29px" }}>
-          <Typography
+        <Box mb={{xs:"17px" , md:"228px"}} mt="29px">
+          <Text18
             variant="h2"
-            sx={{
-              fontSize: "18px",
-              fontWeight: "400",
-              lineHeight: "27px",
-              marginBottom: "14px",
-            }}
+            mb= "14px"   
           >
             Shipping Address
-          </Typography>
-          <Grid container spacing={2}>
+          </Text18>
+          <Grid container spacing={2} mb="8px">
             <Grid item xs={12} md={6}>
               <InputBlock sx={{ width: "100%" }} label="First name" />
             </Grid>
@@ -50,6 +46,9 @@ export default function ShippingAddress() {
               <InputBlock sx={{ width: "100%" }} label="Zip/Postal code" />
             </Grid>
           </Grid>
+
+          <CheckboxBlock label="Use a different billing address"/>
+
         </Box>
     )
 }

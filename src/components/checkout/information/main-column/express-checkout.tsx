@@ -22,21 +22,23 @@ const StyledIconButton = styled(IconButton)({
 })
 
 
+const StyledLegend = styled("legend")({
+  textAlign: "center",
+  color: "#333333",
+  fontSize: "14px",
+  fontWeight: 400,
+  lineHeight: "21px",
+  padding: "0 14px",
+})
+
+
 export default function ExpressCheckout() {
     return(
-        <Box component="fieldset" sx={{ marginTop: "27px" }}>
-        <legend
-          style={{
-            textAlign: "center",
-            color: "#333333",
-            fontSize: "14px",
-            fontWeight: 400,
-            lineHeight: "21px",
-            padding: "0 14px",
-          }}
+        <Box component="fieldset" mt="27px">
+        <StyledLegend
         >
           Express Checkout
-        </legend>
+        </StyledLegend>
         <Grid container spacing={"9px"}>
           <Grid item xs={6}>
             <StyledIconButton
