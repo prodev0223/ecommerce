@@ -1,6 +1,4 @@
-import { Box , Stack , Sheet , Badge , Avatar , Typography , Divider} from "@mui/joy";
-import CheckoutHeader from "../checkout-header";
-import OrderSummary from "../order-summary";
+import {Typography} from "@mui/joy";
 import MainColumn from "./main-column";
 import { useParams } from 'react-router-dom';
 
@@ -8,6 +6,7 @@ import { ReactComponent as PendingPaymentIcon } from "../../../assets/images/ico
 import { ReactComponent as CheckmarkIcon } from "../../../assets/images/icons/checkmark.svg";
 import { ReactComponent as VanIcon } from "../../../assets/images/icons/van.svg";
 import { ReactComponent as CancelledIcon } from "../../../assets/images/icons/cancelled.svg";
+import CheckoutLayout from "../checkout-layout";
 
 
 const mapCardData : Record<string, {title: string , description:  string, icon: React.ReactElement}> = {
@@ -42,26 +41,8 @@ export default function PaymentStatusMain() {
 
 
     return (
-        <Box sx={{
-            backgroundColor: '#449FDC',
-            maxHeight: {md:"100vh"},
-            overflow:"hidden"
-          }}>
-    
-            <CheckoutHeader />
-
-
-            <Stack  sx={{
-          flexDirection: { xs: "column-reverse", md: "row" },
-          gap: { xs: "0", md: "25px" },
-          bgcolor: { xs: "#fff", md: "transparent" }, 
-        }}>
+        <CheckoutLayout>
                 <MainColumn status={status} mapCardData={mapCardData} />
-                <OrderSummary target="status" />
-
-            </Stack>
-    
-          
-          </Box>
+          </CheckoutLayout>
     )
 }

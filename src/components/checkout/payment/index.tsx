@@ -1,32 +1,10 @@
-import {
-  Box,
-  Stack,
-} from "@mui/joy";
-import CheckoutHeader from "../checkout-header";
-import OrderSummary from "../order-summary";
 import MainColumn from "./main-column";
+import CheckoutLayout from "../checkout-layout";
 
 export default function PaymentMain() {
   return (
-    <Box
-      sx={{
-        backgroundColor: "#449FDC",
-        maxHeight: {md:"100vh"},
-        overflow:"hidden"
-      }}
-    >
-      <CheckoutHeader />
-
-      <Stack
-        sx={{
-          flexDirection: { xs: "column-reverse", md: "row" },
-          gap: { xs: "0", md: "25px" },
-          bgcolor: { xs: "#fff", md: "transparent" },
-        }}
-      >
+    <CheckoutLayout>
         <MainColumn />
-        <OrderSummary />
-      </Stack>
-    </Box>
+    </CheckoutLayout>
   );
 }
