@@ -9,7 +9,7 @@ import { Text14, Text18 } from "../../../common/text-block";
 
 export default function CustomerInformation() {
     return(
-        <Paper variant="outlined" sx={{ padding: "14px" , marginBottom: "228px"}}>
+        <Paper variant="outlined" sx={{ padding: "14px"}}>
         <Text18 sx={{ marginBottom: "14px" }}>Customer information</Text18>
 
         <Grid container spacing={"14px"}>

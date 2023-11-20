@@ -1,13 +1,6 @@
 import {
   Box,
   Chip,
-  Divider,
-  FormControlLabel,
-  FormLabel,
-  Grid,
-  IconButton,
-  Input,
-  List,
   Paper,
   Stack,
   Typography,
@@ -16,12 +9,9 @@ import {
 import ButtonBlock from "../../../common/button-block";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import TrackingInformation from "./tracking-information";
+import { StyledFlexContainerRowCentered } from "../../../common/flex-container";
+import { Text14, Text18 } from "../../../common/text-block";
 
-const StyledFlexContainerRowCentered = styled(Stack)({
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-});
 
 interface IMapCardProps {
   title: string;
@@ -63,8 +53,8 @@ export default function MapCard({ title, description, status }: IMapCardProps) {
           {description}
         </Typography>
 
-        <ButtonBlock title="Continue Shopping" sx={{padding:"14px 17px"}} />
-        <ButtonBlock title="Contact Support" variant="outlined" sx={{padding:"14px 17px"}} />
+        <ButtonBlock title="Continue Shopping" sx={{padding:"14px 17px"}}  bgcolor="#449FDC" />
+        <ButtonBlock title="Contact Support" variant="outlined" sx={{padding:"14px 17px" , color:"#449FDC" , borderColor:"#449FDC"}} />
       </Stack>
 
       {(status === "confirmed" || status === "processing") && (
@@ -72,13 +62,10 @@ export default function MapCard({ title, description, status }: IMapCardProps) {
           sx={{ gap: "8px", padding: "14px", borderTop: "1px solid #D9D9D9" }}
         >
           <StyledFlexContainerRowCentered>
-            <Typography
-              sx={{
-                fontSize: "18px",
-              }}
+            <Text18
             >
               Tracking information
-            </Typography>
+            </Text18>
 
             {status === "confirmed" && (
               <Chip
@@ -97,10 +84,7 @@ export default function MapCard({ title, description, status }: IMapCardProps) {
             )}
           </StyledFlexContainerRowCentered>
           {status === "processing" && (
-            <Typography
-              sx={{
-                fontSize: "14px",
-              }}
+            <Text14
             >
               Your tracking information will appear here when your order is
               confirmed. This normally takes 1-3 business days. If the status of
@@ -110,17 +94,14 @@ export default function MapCard({ title, description, status }: IMapCardProps) {
                 here
               </a>{" "}
               or by replying to this email..
-            </Typography>
+            </Text14>
           )}
 
           {status === "confirmed" && (
-            <Typography
-              sx={{
-                fontSize: "14px",
-              }}
+            <Text14
             >
               Estimated delivery date: April 3 - May 3
-            </Typography>
+            </Text14>
           )}
 
           {status === "confirmed" && (

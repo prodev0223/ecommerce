@@ -1,11 +1,6 @@
-import { Stack, Typography } from "@mui/material";
 import React from "react";
-
-
-
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
@@ -16,10 +11,10 @@ interface ButtonBlockProps {
 }
 
 const SelectBlock:React.FC<ButtonBlockProps> = ({label}) => {
-  const [age, setAge] = React.useState('');
+  const [selectedVALUE, setSelectedVALUE] = React.useState('');
 
   const handleChange = (event:SelectChangeEvent) => {
-    setAge(event.target.value as string);
+    setSelectedVALUE(event.target.value as string);
   };
   return (
     <FormControl sx={{ width: '100%' }}>
@@ -27,7 +22,7 @@ const SelectBlock:React.FC<ButtonBlockProps> = ({label}) => {
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
-          value={age}
+          value={selectedVALUE}
           label={label || "Age"}
           onChange={handleChange}
 

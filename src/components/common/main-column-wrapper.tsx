@@ -10,8 +10,9 @@ export default function MainColumnWrapper({children}:IMainColumnWrapperProps) {
         <Paper
         sx={{
           bgcolor: "#fff",
-          width: {xs:"100%" , md:"808px"},
-          maxWidth: "808px",
+          // width: {xs:"100%" , md:"808px"},
+          width: {xs:"100%" , md:"58%"},
+          // maxWidth: "808px",
           minHeight: "100%",
           boxShadow: {xs:"none" , md:"-5px 0px 20px 0px #449FDCF2"},
           maxHeight:{md:"100vh"},

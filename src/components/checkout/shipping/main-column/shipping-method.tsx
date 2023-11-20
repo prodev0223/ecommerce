@@ -17,7 +17,6 @@ export default function ShippingMethod() {
         boxShadow: 'sm',
         borderRadius: 'sm',
         p: 1,
-        marginBottom: "228px"
       }}
     >
       <RadioGroup name="tiers" sx={{ gap: 1, '& > div': { p: 1 } }}>

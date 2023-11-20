@@ -1,28 +1,41 @@
-import { InputAdornment, Stack, Typography } from "@mui/material";
+import { InputAdornment } from "@mui/material";
 import React from "react";
-import TextField from "@mui/material/TextField";
+import TextField, { BaseTextFieldProps } from "@mui/material/TextField";
 
-interface InputBlockProps {
-  sx?: any;
-  icon?: React.ReactElement;
+interface InputBlockProps extends BaseTextFieldProps {
+  id?:string;
+  name?:string;
+  startIcon?: React.ReactElement | string;
+  endIcon?: React.ReactElement | string;
   label?: string;
+  value?:string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  error?: boolean;
+  helperText?: string | boolean
 }
 
-const InputBlock: React.FC<InputBlockProps> = ({ sx, icon, label }) => {
+const InputBlock: React.FC<InputBlockProps> = ({ sx, startIcon ,endIcon , label , ...props }) => {
   return (
     <TextField
     size="medium"
-      sx={{ ...sx , backgroundColor:"#fff" , ".MuiOutlinedInput-notchedOutline":{
+      sx={{ ...sx , ".MuiInputBase-root":{
+        backgroundColor:"#fff" 
+      }, ".MuiOutlinedInput-notchedOutline":{
         borderRadius:"8px"
       }}}
-      inputProps={{
-        startAdornment: icon && (
-          <InputAdornment position="start">{icon}</InputAdornment>
-        ),
+
+      InputProps={{
+        startAdornment: startIcon && <InputAdornment position="start">{startIcon}</InputAdornment>,
+        endAdornment: endIcon && <InputAdornment position="end">{endIcon}</InputAdornment>,
       }}
-      id="outlined-basic"
-      label={label || "Outlined"}
+
+      // label={label}
+
+      placeholder={label}
       variant="outlined"
+
+      {...props}
     />
   );
 };

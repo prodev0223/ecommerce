@@ -64,10 +64,13 @@ export default function MainColumn({status , mapCardData}:{status:string , mapCa
       <CustomerInformation />
 
       <StyledFlexContainerRowCentered
-        sx={{ marginTop: "34px", marginBottom: "77px" , flexDirection:{xs:"column-reverse" , sm:"row"}  }}
+           flexDirection={{ xs: "column-reverse", sm: "row" }}
+           mt="34px"
+           mb={{ xs: "17px", md: "77px" }}
+           gap={{ xs: "5px", md: "0" }}
       >
-        <ButtonBlock variant="text" title="Need help?" sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
-        <ButtonBlock title="Continue shopping" sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
+        <ButtonBlock variant="text" title="Need help?" sx={{width:{xs:"100%" , sm:"fit-content"} ,  color:"#449FDC"}}/>
+        <ButtonBlock title="Continue shopping"  bgcolor="#449FDC" sx={{width:{xs:"100%" , sm:"fit-content"}}}/>
       </StyledFlexContainerRowCentered>
 
       <Divider variant="fullWidth" />

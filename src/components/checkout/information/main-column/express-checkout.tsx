@@ -71,6 +71,9 @@ export default function ExpressCheckout() {
             <StyledIconButton
               sx={{
                 bgcolor: "#000",
+                "&:hover":{
+                  bgcolor: "rgba(0,0,0,0.6)"
+                }
               }}
             >
               <ApplePayIcon />

@@ -1,6 +1,5 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { StyledFlexContainerRowCentered } from "../common/flex-container";
@@ -19,7 +18,7 @@ const style = {
   border: "none",
   boxShadow: "none",
   p: "16px",
-  width: { md: "1110px" },
+  width: { xs: "375px", md: "1110px" },
   borderRadius: "12px",
   maxHeight: "80vh",
   overflow: "auto",
@@ -31,7 +30,7 @@ export default function ShippingPolicyModal({activeModal , handleCloseModal}:IMo
   return (
     <div>
       <Modal
-        open={activeModal.open && activeModal.type == "shipping-policy"}
+        open={activeModal.open && activeModal.type === "shipping-policy"}
         onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -342,9 +341,11 @@ export default function ShippingPolicyModal({activeModal , handleCloseModal}:IMo
           </Stack>
 
           <Stack
-            sx={{ width: "100%", alignItems: "flex-end", marginTop: "16px" }}
+            mt="16px"
+            alignItems={{ xs: "center", md: "flex-end" }}
+            sx={{ width: "100%" }}
           >
-            <ButtonBlock title="I have read and agreed to the shipping policy" />
+            <ButtonBlock title="I have read and agreed to the shipping policy" bgcolor="#449FDC" />
           </Stack>
         </Box>
       </Modal>

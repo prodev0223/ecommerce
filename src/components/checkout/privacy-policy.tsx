@@ -1,6 +1,5 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { StyledFlexContainerRowCentered } from "../common/flex-container";
@@ -32,13 +31,13 @@ export default function PrivacyPolicyModal({
   return (
     <div>
       <Modal
-        open={activeModal.open && activeModal.type == "privacy-policy"}
+        open={activeModal.open && activeModal.type === "privacy-policy"}
         onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <StyledFlexContainerRowCentered sx={{ paddingBottom: "16px" }}>
+          <StyledFlexContainerRowCentered pb="16px">
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Privacy policy
             </Typography>
@@ -47,7 +46,7 @@ export default function PrivacyPolicyModal({
             </IconButton>
           </StyledFlexContainerRowCentered>
           <Divider variant="fullWidth" />
-          <Stack sx={{ gap: "14px", marginTop: "16px" }}>
+          <Stack gap="14px" mt="16px">
             <Text18>
               <strong>1. Information We Collect:</strong>
             </Text18>
@@ -158,13 +157,11 @@ export default function PrivacyPolicyModal({
           </Stack>
 
           <Stack
-            sx={{
-              width: "100%",
-              alignItems: { xs: "center", md: "flex-end" },
-              marginTop: "16px",
-            }}
+          alignItems={{ xs: "center", md: "flex-end"}}
+          mt="16px"
+          width="100%"
           >
-            <ButtonBlock title="I have read and agreed to the privacy policy" />
+            <ButtonBlock title="I have read and agreed to the privacy policy"  bgcolor="#449FDC" />
           </Stack>
         </Box>
       </Modal>

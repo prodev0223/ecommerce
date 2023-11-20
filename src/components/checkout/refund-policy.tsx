@@ -1,6 +1,5 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { StyledFlexContainerRowCentered } from "../common/flex-container";
@@ -8,7 +7,6 @@ import { Divider, IconButton, Stack } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ButtonBlock from "../common/button-block";
 import { Text18 } from "../common/text-block";
-import { IActiveModal } from "./checkout-footer";
 import { IModalProps } from "../../types";
 
 const style = {
@@ -20,8 +18,10 @@ const style = {
   border: "none",
   boxShadow: "none",
   p: "16px",
-  width: { md: "1110px" },
+  width: { xs: "375px", md: "1110px" },
   borderRadius: "12px",
+  maxHeight: "80vh",
+  overflow: "auto",
 };
 
 
@@ -30,7 +30,7 @@ export default function RefundPolicyModal({activeModal , handleCloseModal}:IModa
   return (
     <div>
       <Modal
-        open={activeModal.open && activeModal.type == "refund-policy"}
+        open={activeModal.open && activeModal.type === "refund-policy"}
         onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -100,9 +100,9 @@ export default function RefundPolicyModal({activeModal , handleCloseModal}:IModa
           </Stack>
 
           <Stack
-            sx={{ width: "100%", alignItems: "flex-end", marginTop: "16px" }}
+            sx={{ width: "100%", alignItems: { xs: "center", md: "flex-end" }, marginTop: "16px" }}
           >
-            <ButtonBlock title="I have read and agreed to the refund policy" />
+            <ButtonBlock title="I have read and agreed to the refund policy" bgcolor="#449FDC"/>
           </Stack>
         </Box>
       </Modal>

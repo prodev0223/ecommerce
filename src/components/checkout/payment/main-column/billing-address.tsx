@@ -8,7 +8,7 @@ import RadioGroup from '@mui/joy/RadioGroup';
 
 export default function BillingAddress() {
   return (
-    <Box sx={{ minWidth: 240 , marginBottom: "228px" }}>
+    <Box sx={{ minWidth: 240}}>
       <RadioGroup
         aria-labelledby="example-payment-channel-label"
         overlay

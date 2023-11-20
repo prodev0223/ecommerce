@@ -42,8 +42,8 @@ export default function AddTip() {
             <Stack sx={{ gap: "14px", width: "100%" }}>
               <AddTipRadio />
               <Stack sx={{ flexDirection: "row", gap: "14px" }}>
-                <InputBlock label="Custom amount" sx={{ flex: "1" }} />
-                <ButtonBlock title="Apply" disabled={true} sx={{padding:"16px 17px"}} />
+                <InputBlock label="Enter custom amount" sx={{ flex: "1" }} startIcon="$" endIcon="USD" />
+                <ButtonBlock title="Apply" disabled={true} sx={{padding:"16px 17px"}}  />
               </Stack>
               <Text14>
                 Keep in mind that we see if you left a tip when handling your

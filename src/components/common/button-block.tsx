@@ -1,12 +1,24 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { styled } from "@mui/material";
+import Button , {ButtonOwnProps} from "@mui/material/Button";
 import React from "react";
 
-interface ButtonBlockProps {
+
+const StyledButton = styled(Button)({
+  textTransform: "capitalize",
+  width: "fit-content",
+  borderRadius: "10px",
+  paddingY:"21px",
+  fontSize:"14px",
+})
+
+
+interface ButtonBlockProps extends ButtonOwnProps {
   variant?: "contained" | "outlined" | "text";
   title?: string;
   disabled?: boolean;
   onClick?: () => any;
   sx?: any
+  bgcolor?: string
 }
 
 const ButtonBlock: React.FC<ButtonBlockProps> = ({
@@ -14,24 +26,24 @@ const ButtonBlock: React.FC<ButtonBlockProps> = ({
   title,
   disabled,
   onClick,
-  sx
+  sx,
+  bgcolor,
+  ...props
 }) => {
   return (
-    <Button
+    <StyledButton
       variant={variant || "contained"}
       sx={{
-        textTransform: "capitalize",
-        width: "fit-content",
-        borderRadius: "10px",
-        paddingY:"21px",
-        fontSize:"14px",
+        bgcolor,
         ...sx
       }}
       disabled={disabled || false}
       onClick={onClick}
+
+      {...props}
     >
       {title || "Submit"}
-    </Button>
+    </StyledButton>
   );
 };
 

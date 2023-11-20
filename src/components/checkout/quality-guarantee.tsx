@@ -7,7 +7,6 @@ import { StyledFlexContainerRowCentered } from "../common/flex-container";
 import { Divider, IconButton, Stack, Link } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ButtonBlock from "../common/button-block";
-import { Text18 } from "../common/text-block";
 import { IModalProps } from "../../types";
 
 const style = {
@@ -19,7 +18,7 @@ const style = {
   border: "none",
   boxShadow: "none",
   p: "16px",
-  width: { md: "1110px" },
+  width: { xs: "375px", md: "1110px" },
   borderRadius: "12px",
   maxHeight: "80vh",
   overflow: "auto",
@@ -38,7 +37,7 @@ export default function QualityGuaranteeModal({
   return (
     <div>
       <Modal
-        open={activeModal.open && activeModal.type == "quality-guarantee"}
+        open={activeModal.open && activeModal.type === "quality-guarantee"}
         onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -159,9 +158,9 @@ export default function QualityGuaranteeModal({
           </Stack>
 
           <Stack
-            sx={{ width: "100%", alignItems: "flex-end", marginTop: "16px" }}
+            sx={{ width: "100%", alignItems: { xs: "center", md: "flex-end" }, marginTop: "16px" }}
           >
-            <ButtonBlock title="Show me the full Refund/Return Policy" />
+            <ButtonBlock title="Show me the full Refund/Return Policy" bgcolor="#449FDC" />
           </Stack>
         </Box>
       </Modal>
